@@ -11,24 +11,24 @@ import com.example.aluminidashboardP.exception.UserNotFoundException;
 import com.example.aluminidashboardP.repository.StudentRepository;
 import com.example.aluminidashboardP.service.StudentService;
 import com.example.aluminidashboardP.studentDTO.StudentDTO;
-
+//Implementation of service interface
 @Service
 public class StudentServiceImpl implements StudentService {
- 
+       //Constructor Injection
 	@Autowired
 	private StudentRepository studentRepository;
-
+       //To Display all the Student
 	@Override
 	public List<Student> getAllStudent() {
 		return studentRepository.findAll();
 	}
-
+       //to create student Database
 	@Override
 	public Student createStudent(StudentDTO studentDTO) {
 		Student student=Student.builder().name(studentDTO.getName()).email(studentDTO.getEmail()).phone(studentDTO.getPhone()).grdYear(studentDTO.getGrdYear()).build();
 		return studentRepository.save(student);
 	}
-
+       // update the exting recordo of database
 	@Override
 	public Student updateStudent(int id, StudentDTO studentDTO) throws UserNotFoundException
 	{
@@ -46,7 +46,7 @@ public class StudentServiceImpl implements StudentService {
 		
 	else throw new UserNotFoundException("No user bearing id"+id+"can be found");
 	}
-
+       // getAll records from the student
 	@Override
 	public Student getAllStudentById(int id) 
 	{
@@ -69,7 +69,7 @@ public class StudentServiceImpl implements StudentService {
 		else
 		return studentRepository.findBygrdYearContaining(grdYear);
 	}
-
+      // Deleting the records from database
 	@Override
 	public String deleteStudent(int id) 
 	{
