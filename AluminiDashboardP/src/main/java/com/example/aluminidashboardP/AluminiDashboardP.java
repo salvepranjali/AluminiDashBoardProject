@@ -11,6 +11,7 @@ import com.example.aluminidashboardP.repository.StudentRepository;
 @SpringBootApplication
 public class AluminiDashboardP implements CommandLineRunner{
 @Autowired
+	//Creating the Object of StudentRepository class
 private StudentRepository studentRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(AluminiDashboardP.class, args);
@@ -18,12 +19,12 @@ private StudentRepository studentRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
-		
+		// Creating demo databse value
 		Student a1=Student.builder().name("pranjal").phone("9876543234").email("A@gmail.com").grdYear("2023").build();
 		Student a2=Student.builder().name("prtik").phone("9876543244").email("B@gmail.com").grdYear("2021").build();
 		Student a3=Student.builder().name("pooja").phone("9876543233").email("C@gmail.com").grdYear("2022").build();
 		Student a4=Student.builder().name("jayshri").phone("987654322").email("T@gmail.com").grdYear("2024").build();
-		
+		// Saving the Database Object
 		studentRepository.save(a1);
 		studentRepository.save(a2);
 		studentRepository.save(a3);
