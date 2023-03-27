@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.aluminidashboardP.entity.Student;
 import com.example.aluminidashboardP.studentDTO.StudentDTO;
-
+// creating StudentService interface for different CRUD Operation
 public interface StudentService {
 	List<Student> getAllStudent();
 	
