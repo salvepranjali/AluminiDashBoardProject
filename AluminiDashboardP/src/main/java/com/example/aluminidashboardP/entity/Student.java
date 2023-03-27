@@ -17,7 +17,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name="student")
+// Creating Entity class
 public class Student {
+	// Declaring variables of entity class and adding that variables in table
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="sId")
@@ -30,6 +32,7 @@ public class Student {
 	private String email;
 	@Column(name="sGraduationYear" ,length=10)
 	private String grdYear;
+	// Creating Constructor using fields
 	public Student(String name, String phone, String email, String grdYear) {
 		super();
 		this.name = name;
